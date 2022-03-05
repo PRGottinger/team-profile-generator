@@ -2,6 +2,8 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const Manager = require("./lib/Manager.js");
+const Engineer = require("./lib/Engineer.js");
+const Intern = require("./lib/Intern.js");
 
 const teamArray = [];
 
@@ -172,7 +174,7 @@ function createIntern() {
       },
     ])
     .then((userInput) => {
-      const newEngineer = new Intern(
+      const newIntern = new Intern(
         userInput.internName,
         userInput.internId,
         userInput.internEmail,
@@ -205,6 +207,31 @@ function generateHTML() {
   </div>`;
   }
 
+  function generateEngineerCard(data) {
+    return ` <div class="card" style="width: 18rem;">
+    <div class="card-header">
+      ${data.name}
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">ID: ${data.id}</li>
+      <li class="list-group-item">Email: ${data.email}</li>
+      <li class="list-group-item">Github: ${data.github}</li>
+    </ul>
+  </div>`;
+  }
+
+  function generateInternCard(data) {
+    return ` <div class="card" style="width: 18rem;">
+    <div class="card-header">
+      ${data.name}
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">ID: ${data.id}</li>
+      <li class="list-group-item">Email: ${data.email}</li>
+      <li class="list-group-item">School: ${data.school}</li>
+    </ul>
+  </div>`;
+  }
   const template = `
   <!DOCTYPE html>
 <html lang="en">
@@ -226,6 +253,10 @@ function generateHTML() {
       ${teamArray.map((employee) => {
         if (employee.getRole() == "Manager") {
           return generateManagerCard(employee);
+        } else if (employee.getRole() == "Engineer") {
+          return generateEngineerCard(employee);
+        } else {
+          return generateInternCard(employee);
         }
       })}
   </body>
