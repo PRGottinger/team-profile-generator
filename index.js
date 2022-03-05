@@ -202,7 +202,7 @@ function generateHTML() {
     <ul class="list-group list-group-flush">
       <li class="list-group-item">ID: ${data.id}</li>
       <li class="list-group-item">Email: ${data.email}</li>
-      <li class="list-group-item">Office Number: ${data.number}</li>
+      <li class="list-group-item">Office Number: ${data.officeNumber}</li>
     </ul>
   </div>`;
   }
