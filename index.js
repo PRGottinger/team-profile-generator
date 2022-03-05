@@ -215,7 +215,11 @@ function generateHTML() {
     <ul class="list-group list-group-flush">
       <li class="list-group-item">ID: ${data.id}</li>
       <li class="list-group-item">Email: ${data.email}</li>
-      <li class="list-group-item">Github: ${data.github}</li>
+      <li class="list-group-item">Github: ${data.getGithub()}</li>
+
+    
+
+     
     </ul>
   </div>`;
   }
@@ -270,3 +274,5 @@ function generateHTML() {
     console.log("html file successfully generated");
   });
 }
+
+//  `<a href="https://github.com/${data.github}">https://github.com/${data.github}</a>`
