@@ -199,8 +199,8 @@ function generateHTML() {
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">ID: ${data.id}</li>
-      <li class="list-group-item">Email: john@mail.com</li>
-      <li class="list-group-item">Office Number: 5678</li>
+      <li class="list-group-item">Email: ${data.email}</li>
+      <li class="list-group-item">Office Number: ${data.number}</li>
     </ul>
   </div>`;
   }
@@ -235,7 +235,7 @@ function generateHTML() {
 
   // write the HTML file
 
-  fs.writeFile("./dist/index.html", output, () => {
+  fs.writeFile("./dist/index.html", template, () => {
     console.log("html file successfully generated");
   });
 }
