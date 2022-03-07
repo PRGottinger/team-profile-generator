@@ -159,7 +159,7 @@ function createIntern() {
 
       {
         type: "input",
-        name: "internID",
+        name: "internId",
         message: "What is the intern's ID?",
       },
       {
@@ -195,7 +195,9 @@ function generateHTML() {
   console.log(teamArray);
 
   function generateManagerCard(data) {
-    return ` <div class="card" style="width: 18rem;">
+    return ` <div class="row">
+    <div class="col-sm-6">
+    <div class="card" style="width: 18rem;">
     <div class="card-header">
       ${data.name}
     </div>
@@ -204,11 +206,15 @@ function generateHTML() {
       <li class="list-group-item">Email: ${data.email}</li>
       <li class="list-group-item">Office Number: ${data.officeNumber}</li>
     </ul>
+  </div>
+  </div>
   </div>`;
   }
 
   function generateEngineerCard(data) {
-    return ` <div class="card" style="width: 18rem;">
+    return ` <div class="row">
+    <div class="col-sm-6">
+    <div class="card" style="width: 18rem;">
     <div class="card-header">
       ${data.name}
     </div>
@@ -216,16 +222,18 @@ function generateHTML() {
       <li class="list-group-item">ID: ${data.id}</li>
       <li class="list-group-item">Email: ${data.email}</li>
       <li class="list-group-item">Github: ${data.getGithub()}</li>
-
-    
-
      
     </ul>
-  </div>`;
+  </div>
+  </div>
+    </div>
+  `;
   }
 
   function generateInternCard(data) {
-    return ` <div class="card" style="width: 18rem;">
+    return ` <div class="row">
+    <div class="col-sm-6">
+    <div class="card" style="width: 18rem;">
     <div class="card-header">
       ${data.name}
     </div>
@@ -234,7 +242,10 @@ function generateHTML() {
       <li class="list-group-item">Email: ${data.email}</li>
       <li class="list-group-item">School: ${data.school}</li>
     </ul>
-  </div>`;
+  </div>
+  </div>
+  </div>
+  `;
   }
   const template = `
   <!DOCTYPE html>
